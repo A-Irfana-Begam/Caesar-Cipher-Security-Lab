@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #070b14;
+    --card: #0d1422;
+    --card-light: #111b2d;
+    --border: #1d2b42;
+    --text: #f1f5f9;
+    --muted: #8b9bb2;
+    --primary: #38bdf8;
+    --primary-dark: #0284c7;
+    --success: #22c55e;
+    --danger: #ef4444;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header */
+
+.header {
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(7, 11, 20, 0.95);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Main */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+    padding: 60px 0;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.tag {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.subtitle {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+    font-size: 16px;
+}
+
+/* Main Cipher Card */
+
+.cipher-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.input-section,
+.output-section {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+textarea,
+input {
+    width: 100%;
+    background: #080e19;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    padding: 15px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+textarea {
+    height: 180px;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+textarea:focus,
+input:focus {
+    border-color: var(--primary);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: var(--primary);
+    color: #031018;
+}
+
+.primary:hover {
+    background: #7dd3fc;
+}
+
+.secondary {
+    background: #172337;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.secondary:hover {
+    border-color: var(--primary);
+}
+
+.clear {
+    background: transparent;
+    color: #fca5a5;
+    border: 1px solid #54252b;
+}
+
+/* Output */
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output-header button {
+    padding: 7px 13px;
+    background: #172337;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.output-box {
+    flex: 1;
+    min-height: 180px;
+    padding: 18px;
+    background: #080e19;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--primary);
+    word-break: break-word;
+}
+
+.status {
+    min-height: 24px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--success);
+}
+
+/* Common Cards */
+
+.analysis-card,
+.brute-card,
+.security-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #10263a;
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.description {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* Transformation */
+
+.transformation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 50px;
+}
+
+.char-box {
+    min-width: 45px;
+    padding: 8px;
+    text-align: center;
+    background: #080e19;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.char-original {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.char-result {
+    display: block;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Brute Force */
+
+.brute-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.brute-item {
+    padding: 13px;
+    background: #080e19;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.brute-item strong {
+    color: var(--primary);
+}
+
+/* Security */
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.security-item {
+    padding: 20px;
+    background: #080e19;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.security-item h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.security-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+footer p {
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+footer span {
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+        padding: 40px 0;
+    }
+
+    .cipher-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .analysis-card,
+    .brute-card,
+    .security-card {
+        padding: 20px;
+    }
+
+    .security-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brute-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons button {
+        flex: 1;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .badge {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    textarea {
+        height: 150px;
+    }
+}

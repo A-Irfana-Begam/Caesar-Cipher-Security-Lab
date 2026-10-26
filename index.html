@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher Security Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">CAESAR CIPHER</div>
+        <div class="badge">SECURITY LAB</div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <p class="tag">CRYPTOGRAPHY TOOL</p>
+            <h1>Caesar Cipher<br><span>Security Lab</span></h1>
+            <p class="subtitle">
+                Encrypt, decrypt and analyze messages using the Caesar Cipher.
+            </p>
+        </section>
+
+        <section class="cipher-card">
+
+            <div class="input-section">
+                <label for="message">MESSAGE</label>
+                <textarea
+                    id="message"
+                    placeholder="Enter your message here..."
+                ></textarea>
+
+                <label for="shift">SHIFT VALUE</label>
+                <input
+                    type="number"
+                    id="shift"
+                    value="3"
+                    min="0"
+                    max="25"
+                >
+
+                <div class="buttons">
+                    <button id="encryptBtn" class="primary">
+                        Encrypt
+                    </button>
+
+                    <button id="decryptBtn" class="secondary">
+                        Decrypt
+                    </button>
+
+                    <button id="clearBtn" class="clear">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-header">
+                    <label>OUTPUT</label>
+                    <button id="copyBtn">Copy</button>
+                </div>
+
+                <div id="output" class="output-box">
+                    Your result will appear here...
+                </div>
+
+                <div id="status" class="status"></div>
+            </div>
+
+        </section>
+
+        <section class="analysis-card">
+            <div class="section-title">
+                <span>01</span>
+                Character Transformation
+            </div>
+
+            <div id="transformation" class="transformation">
+                <p>Enter a message and encrypt it to see the transformation.</p>
+            </div>
+        </section>
+
+        <section class="brute-card">
+            <div class="section-title">
+                <span>02</span>
+                Brute-Force Analysis
+            </div>
+
+            <p class="description">
+                Caesar Cipher has only 26 possible shifts.
+                This makes it vulnerable to brute-force attacks.
+            </p>
+
+            <button id="bruteBtn" class="primary">
+                Run All 26 Shifts
+            </button>
+
+            <div id="bruteForce" class="brute-grid"></div>
+        </section>
+
+        <section class="security-card">
+            <div class="section-title">
+                <span>03</span>
+                Security Analysis
+            </div>
+
+            <div class="security-grid">
+
+                <div class="security-item">
+                    <h3>Limited Key Space</h3>
+                    <p>
+                        Only 26 possible shifts exist, so attackers
+                        can easily test every possibility.
+                    </p>
+                </div>
+
+                <div class="security-item">
+                    <h3>Frequency Analysis</h3>
+                    <p>
+                        Letter frequency patterns can help attackers
+                        identify the original message.
+                    </p>
+                </div>
+
+                <div class="security-item">
+                    <h3>Not Modern Security</h3>
+                    <p>
+                        Caesar Cipher is useful for learning,
+                        but it should not protect real sensitive data.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Caesar Cipher Security Lab</p>
+        <span>Educational Cryptography Project</span>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
