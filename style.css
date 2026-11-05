@@ -590,3 +590,175 @@ footer span {
         width: 100%;
     }
 }
+
+
+/* =================================
+   PREMIUM EMERALD INTERACTIVE EFFECTS
+================================= */
+
+/* Floating glitter particles */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #b7ffd0 50%, transparent 100%),
+        radial-gradient(2px 2px at 30% 75%, #39ff88 50%, transparent 100%),
+        radial-gradient(3px 3px at 65% 35%, #d0ffe0 50%, transparent 100%),
+        radial-gradient(2px 2px at 85% 80%, #39ff88 50%, transparent 100%),
+        radial-gradient(2px 2px at 50% 90%, #b7ffd0 50%, transparent 100%);
+
+    background-size: 260px 260px;
+    animation: emeraldGlitter 15s linear infinite;
+    opacity: 0.45;
+}
+
+@keyframes emeraldGlitter {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 260px 260px;
+    }
+}
+
+/* Hero neon glow */
+.hero h1 span {
+    animation: greenGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes greenGlow {
+    from {
+        text-shadow: 0 0 10px rgba(57,255,136,0.25);
+    }
+    to {
+        text-shadow:
+            0 0 15px rgba(57,255,136,0.6),
+            0 0 35px rgba(57,255,136,0.25);
+    }
+}
+
+/* Main card interactive glow */
+.cipher-card {
+    transition: 0.35s ease;
+}
+
+.cipher-card:hover {
+    border-color: rgba(57,255,136,0.5);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.4),
+        0 0 30px rgba(57,255,136,0.12);
+}
+
+/* Input focus glow */
+textarea:focus,
+input:focus {
+    border-color: var(--green);
+    box-shadow:
+        0 0 0 3px rgba(57,255,136,0.1),
+        0 0 22px rgba(57,255,136,0.13);
+}
+
+/* Button shine */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+button:hover::after {
+    left: 140%;
+}
+
+.primary:hover {
+    box-shadow:
+        0 0 15px rgba(57,255,136,0.4),
+        0 0 30px rgba(57,255,136,0.15);
+}
+
+/* Lower cards hover */
+.analysis-card,
+.brute-card,
+.security-card {
+    transition: transform 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.analysis-card:hover,
+.brute-card:hover,
+.security-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(57,255,136,0.5);
+    box-shadow: 0 10px 30px rgba(57,255,136,0.08);
+}
+
+/* Character animation */
+.char-box {
+    transition: 0.25s ease;
+}
+
+.char-box:hover {
+    transform: translateY(-4px) scale(1.05);
+    border-color: var(--green);
+    box-shadow: 0 0 14px rgba(57,255,136,0.2);
+}
+
+/* Brute force hover */
+.brute-item {
+    transition: 0.25s ease;
+}
+
+.brute-item:hover {
+    transform: translateX(4px);
+    background: rgba(57,255,136,0.06);
+    box-shadow: 0 0 12px rgba(57,255,136,0.1);
+}
+
+/* Security items */
+.security-item {
+    transition: 0.3s ease;
+}
+
+.security-item:hover {
+    transform: translateY(-5px);
+    background: #0b170e;
+    box-shadow: 0 0 18px rgba(57,255,136,0.12);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
