@@ -48,7 +48,7 @@ body {
     pointer-events: none;
     display: grid;
     place-items: center;
-    opacity: 0.24;
+    opacity: 0.36;
 }
 
 .cipher-wheel {
@@ -65,10 +65,10 @@ body {
 .outer-wheel {
     width: 650px;
     height: 650px;
-    border: 2px solid rgba(53, 230, 139, 0.22);
+    border: 2px solid rgba(53, 230, 139, 0.30);
     box-shadow:
-        0 0 35px rgba(53, 230, 139, 0.06),
-        inset 0 0 35px rgba(53, 230, 139, 0.04);
+        0 0 35px rgba(53, 230, 139, 0.09),
+        inset 0 0 35px rgba(53, 230, 139, 0.06);
     animation-name: outerWheelRotate;
     animation-duration: 100s;
 }
@@ -76,10 +76,10 @@ body {
 .inner-wheel {
     width: 460px;
     height: 460px;
-    border: 1px dashed rgba(154, 236, 192, 0.35);
+    border: 1px dashed rgba(154, 236, 192, 0.45);
     box-shadow:
-        0 0 30px rgba(53, 230, 139, 0.07),
-        inset 0 0 30px rgba(53, 230, 139, 0.05);
+        0 0 30px rgba(53, 230, 139, 0.09),
+        inset 0 0 30px rgba(53, 230, 139, 0.06);
     animation-name: innerWheelRotate;
     animation-duration: 75s;
 }
@@ -93,10 +93,11 @@ body {
     margin: -15px;
     display: grid;
     place-items: center;
-    color: rgba(154, 236, 192, 0.75);
+    color: rgba(154, 236, 192, 0.95);
     font-family: 'DM Mono', monospace;
     font-size: 13px;
     font-weight: 500;
+    text-shadow: 0 0 8px rgba(53, 230, 139, 0.35);
     transform:
         rotate(var(--angle))
         translateY(-310px)
@@ -104,8 +105,9 @@ body {
 }
 
 .inner-wheel span {
-    color: rgba(53, 230, 139, 0.65);
+    color: rgba(53, 230, 139, 0.95);
     font-size: 11px;
+    text-shadow: 0 0 8px rgba(53, 230, 139, 0.4);
     transform:
         rotate(var(--angle))
         translateY(-215px)
@@ -131,13 +133,13 @@ body {
     width: 82px;
     height: 82px;
     transform: translate(-50%, -50%);
-    border: 1px solid rgba(53, 230, 139, 0.65);
+    border: 1px solid rgba(53, 230, 139, 0.8);
     border-radius: 50%;
-    background: rgba(8, 20, 13, 0.9);
+    background: rgba(8, 20, 13, 0.94);
     box-shadow:
-        0 0 15px rgba(53, 230, 139, 0.2),
-        0 0 35px rgba(53, 230, 139, 0.08),
-        inset 0 0 15px rgba(53, 230, 139, 0.12);
+        0 0 18px rgba(53, 230, 139, 0.3),
+        0 0 40px rgba(53, 230, 139, 0.12),
+        inset 0 0 18px rgba(53, 230, 139, 0.18);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,27 +150,15 @@ body {
     content: "";
     position: absolute;
     inset: 7px;
-    border: 1px dashed rgba(154, 236, 192, 0.35);
+    border: 1px dashed rgba(154, 236, 192, 0.4);
     border-radius: 50%;
 }
 
+/* Hide compass direction labels */
+
 .compass-n,
 .compass-s {
-    position: absolute;
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.compass-n {
-    top: 5px;
-    color: var(--green);
-}
-
-.compass-s {
-    bottom: 5px;
-    color: var(--muted);
+    display: none;
 }
 
 .compass-needle {
@@ -177,7 +167,7 @@ body {
     height: 48px;
     background: linear-gradient(
         to bottom,
-        var(--green) 50%,
+        #65ffad 50%,
         #52645a 50%
     );
     clip-path: polygon(
@@ -186,7 +176,7 @@ body {
         50% 100%,
         0% 50%
     );
-    filter: drop-shadow(0 0 5px rgba(53, 230, 139, 0.6));
+    filter: drop-shadow(0 0 9px rgba(53, 230, 139, 0.95));
     animation: compassPulse 2.5s ease-in-out infinite;
 }
 
@@ -196,17 +186,21 @@ body {
     height: 7px;
     border-radius: 50%;
     background: #eafff2;
-    box-shadow: 0 0 9px var(--green);
+    box-shadow:
+        0 0 9px var(--green),
+        0 0 16px rgba(53, 230, 139, 0.8);
 }
 
 @keyframes compassPulse {
     0%, 100% {
-        filter: drop-shadow(0 0 3px rgba(53, 230, 139, 0.4));
+        filter: drop-shadow(0 0 5px rgba(53, 230, 139, 0.65));
     }
     50% {
-        filter: drop-shadow(0 0 9px rgba(53, 230, 139, 0.9));
+        filter: drop-shadow(0 0 12px rgba(53, 230, 139, 1));
     }
 }
+
+/* BACKGROUND GRID */
 
 body::before {
     content: "";
@@ -215,8 +209,8 @@ body::before {
     pointer-events: none;
     z-index: -1;
     background-image:
-        linear-gradient(rgba(90, 150, 115, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(90, 150, 115, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(90, 150, 115, 0.075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90, 150, 115, 0.075) 1px, transparent 1px);
     background-size: 42px 42px;
 }
 
@@ -840,7 +834,7 @@ footer span {
     .cipher-wheel-bg {
         width: 360px;
         height: 360px;
-        opacity: 0.15;
+        opacity: 0.25;
     }
 
     .outer-wheel {
