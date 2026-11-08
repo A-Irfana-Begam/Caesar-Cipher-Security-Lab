@@ -240,13 +240,12 @@ body::before {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--white);
-    font-size: 19px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    color: var(--green);
+    text-shadow:
+        0 0 5px rgba(53, 230, 139, 0.45),
+        0 0 12px rgba(53, 230, 139, 0.3),
+        0 0 22px rgba(53, 230, 139, 0.18);
+    letter-spacing: 2px;
 }
 
 .logo span {
